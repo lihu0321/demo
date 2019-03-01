@@ -1,0 +1,36 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.user.dao.UserDao">
+    <select id="get" resultType="com.example.demo.user.entity.User">
+        SELECT
+            A.ID,
+            A.NAME,
+            A.SEX,
+            A.MOBILE,
+            A.JOB,
+            A.STATE,
+            A.USERNAME,
+            A.PASSWORD,
+            A.CREATE_TIME,
+            A.UPDATE_TIME1111111111111111
+        FROM user A
+        WHERE A.ID = #{id}
+    </select>
+
+    <select id="list" resultType="com.example.demo.user.entity.User">
+        SELECT
+            A.ID,
+            A.NAME,
+            A.SEX,
+            A.MOBILE,
+            A.JOB,
+            A.STATE,
+            A.USERNAME,
+            A.PASSWORD,
+            A.CREATE_TIME,
+            A.UPDATE_TIME
+        FROM user A
+    </select>
+
+</mapper>

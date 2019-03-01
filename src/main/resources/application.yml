@@ -1,0 +1,60 @@
+server:
+  port: 8080
+#https://blog.csdn.net/zhaoyachao123/article/details/78413467
+#https://www.jianshu.com/p/8f21bbcd79f5
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: 'jdbc:mysql://10.20.2.13:3306/lanjoys_test?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false'
+      username: htd_lanjoys_test
+      password: htd_lanjoys_test918
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      validation-query: SELECT 1
+      test-while-idle: false
+      test-on-borrow: true
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      max-open-prepared-statements: 20
+      validation-query-timeout: 30000
+      filters: stat,wall.slf4j
+      stat-view-servlet:
+        enabled: false
+      web-stat-filter:
+        enabled: false
+      filter:
+        slf4j:
+          statement-executable-sql-log-enable: true
+          enabled: true
+  #jackson:
+    #date-format: yyyy-MM-dd HH:mm:ss
+    #ime-zone: GMT+8
+    #https://orchidflower.oschina.io/2018/06/22/Handling-Bigint-using-Jackson-in-Springboot/
+    #generator:
+          #write_numbers_as_strings: true
+
+
+
+#数据库表列：user_name 实体类属性：userName 映射不对应
+#在Springboot中，可以通过设置map-underscore-to-camel-case属性为true来开启驼峰功能，对应映射
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+person:
+  lastName: zhangsan
+  age: 18
+  boss: false
+  birth: 2017/12/12
+  maps: {k1: v1, k2: v2, k3: v3}
+  lists:
+    - lisi1
+    - zhaosi
+    - wangwu
+    - piaopiao
