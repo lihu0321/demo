@@ -13,7 +13,7 @@
             A.USERNAME,
             A.PASSWORD,
             A.CREATE_TIME,
-            A.UPDATE_TIME1111111111111111
+            A.UPDATE_TIME
         FROM user A
         WHERE A.ID = #{id}
     </select>
